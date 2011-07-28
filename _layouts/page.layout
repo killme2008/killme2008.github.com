@@ -1,0 +1,15 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Dennis zhuang home</title>
+	<meta name="keywords" content="dennis zhuang killme2008">
+	<meta name="description" content="Dennis zhuang's personal website">
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+	<div id="page-container">
+	  {{ content }}
+	</div>
+	<div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
+  </body>
+</html>
