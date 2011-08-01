@@ -9,7 +9,7 @@ title: home
 	Programmer at taobao.com,five years software development experience.I live in hangzhou.
 	My major programming language is Java.Also i am interested in Ruby,Erlang,Scheme,node.js and clojure etc.
 
-### My Links
+### My links
 
 [Blog](http://killme2008.blogjava.net)
 
