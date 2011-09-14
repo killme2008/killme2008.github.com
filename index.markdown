@@ -7,7 +7,8 @@ title: home
 ###	About me
 
 	Programmer at taobao.com,five years software development experience.I live in hangzhou.
-	My major programming language is Java.Also i am interested in Ruby,Erlang,Scheme,node.js and clojure etc.
+	My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.
+	I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.
 
 ### My links
 
