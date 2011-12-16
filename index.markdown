@@ -22,6 +22,7 @@ title: home
 
 [GoogleCode](http://code.google.com/u/killme2008)
 
+[Douban](http://www.douban.com/people/killme2008/)
 
 ### Other links
 

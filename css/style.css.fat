@@ -38,6 +38,10 @@ body {
   color: #5f5f5f;
   font-size: small;
 }
+#stats {
+  text-align: center;
+  margin: 20px 0;
+}
 #page-container {
   width: 900px;
   margin-left: auto;
@@ -125,8 +129,8 @@ a:visited {
   color: #336699;
 }
 pre {
-  background-color: #3f3f3f;
-  color: #dcdccc;
+  background-color: #87ceff;
+  color: #3f3f3f;
   padding: 0.5em 0.6em;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -134,7 +138,7 @@ pre {
   border-radius: 4px;
 }
 code {
-  font-size: 10pt;
+  font-size: 11pt;
 }
 code .p {
   color: #4c7073;
