@@ -23,11 +23,10 @@
       </div>
     </div>
 	<div class="container">
-	  <div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
-	  <div id="stats">
-		<script type="text/javascript" src="http://js.tongji.linezing.com/2620653/tongji.js"></script>
+<p>&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</p>
+<p>script type="text/javascript" src="http://js.tongji.linezing.com/2620653/tongji.js"></script>
 		<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2620653/tongji.gif"/></a></noscript>
-	  </div>
+</p>
 	</div>
   </body>
 </html>
