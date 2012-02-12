@@ -8,22 +8,24 @@
   </head>
   <body>
     <div class="container-fluid">
-	  <p><img src="/img/log.gif" /></p>
+	  <p><img src="/img/log.gif"  width=100 height=80/></p>
       <div class="row-fluid">
 		<div class="span2">
 		  {{ content }}
 		</div>
 		<div class="span10">
-		  <p>Programmer at mei.fm,six years software development experience.I live in hangzhou.</p>
-		  <p>My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.</p>
-		  <p>I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.</p>
+		  <pre><code>
+			  Programmer at mei.fm,six years software development experience.I live in hangzhou.
+			  My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.
+			  I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.
+		  </code></pre>
 		</div>
       </div>
-	<div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
-	<div id="stats">
-	  <script type="text/javascript" src="http://js.tongji.linezing.com/2620653/tongji.js"></script>
-	  <noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2620653/tongji.gif"/></a></noscript>
-	</div>
+	  <div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
+	  <div id="stats">
+		<script type="text/javascript" src="http://js.tongji.linezing.com/2620653/tongji.js"></script>
+		<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2620653/tongji.gif"/></a></noscript>
+	  </div>
     </div>
-</body>
+  </body>
 </html>
