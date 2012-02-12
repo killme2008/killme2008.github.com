@@ -4,12 +4,6 @@ title: home
 ---
 
 
-###	About me
-
-	Programmer at mei.fm,six years software development experience.I live in hangzhou.
-	My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.
-	I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.
-
 ### My links
 
 [Blog](http://killme2008.blogjava.net)
