@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container-fluid">
-	  <p><img src="/img/log.gif"  width=150 height=120 /></p>
+	  <p><img src="/img/log.gif"  width=160 height=120 /></p>
       <div class="row-fluid">
 		<div class="span2">
 		  {{ content }}
@@ -21,11 +21,13 @@
 		  </code></pre>
 		</div>
       </div>
+    </div>
+	<div class="container">
 	  <div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
 	  <div id="stats">
 		<script type="text/javascript" src="http://js.tongji.linezing.com/2620653/tongji.js"></script>
 		<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2620653/tongji.gif"/></a></noscript>
 	  </div>
-    </div>
+	</div>
   </body>
 </html>
