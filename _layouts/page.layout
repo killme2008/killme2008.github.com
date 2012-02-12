@@ -8,16 +8,16 @@
   </head>
   <body>
     <div class="container-fluid">
-	  <p><img src="/img/log.gif"  width=100 height=80/></p>
+	  <p><img src="/img/log.gif"  width=150 height=120 /></p>
       <div class="row-fluid">
 		<div class="span2">
 		  {{ content }}
 		</div>
 		<div class="span10">
 		  <pre><code>
-			  Programmer at mei.fm,six years software development experience.I live in hangzhou.
-			  My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.
-			  I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.
+  Programmer at mei.fm,six years software development experience.I live in hangzhou.
+  My major programming language is Java.Also i am interested in ruby,erlang,scheme,node.js and clojure etc.
+  I maintain several open source projects,include:xmemcached,hs4j,aviator,clojure-control etc.You can find them on my github.
 		  </code></pre>
 		</div>
       </div>
