@@ -4,10 +4,10 @@
 	<title>Dennis zhuang home</title>
 	<meta name="keywords" content="dennis zhuang killme2008">
 	<meta name="description" content="Dennis zhuang's personal website">
-	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-	<div id="page-container">
+	<div id="container">
 	  {{ content }}
 	</div>
 	<div id="footer">&copy;2011, <a href="http://fnil.net">fnil.net</a>. All Rights Reserved.</div>
