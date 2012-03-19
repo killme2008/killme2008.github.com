@@ -10,6 +10,8 @@ title: home
 
 [Twitter](http://twitter.com/killme2008)
 
+[Weibo](http://weibo.com/fnil)
+
 [Github](http://github.com/killme2008)
 
 [Slides](http://www.slideshare.net/killme2008)
