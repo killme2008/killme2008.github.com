@@ -1,26 +1,26 @@
-/* Javadoc æ ·å¼è¡¨ */
+/* Javadoc ÑùÊ½±í */
 
-/* åœ¨æ­¤å¤„å®šä¹‰é¢œè‰²ã€å­—ä½“å’Œå…¶ä»–æ ·å¼å±æ€§ä»¥è¦†ç›–é»˜è®¤å€¼ */
+/* ÔÚ´Ë´¦¶¨ÒåÑÕÉ«¡¢×ÖÌåºÍÆäËûÑùÊ½ÊôĞÔÒÔ¸²¸ÇÄ¬ÈÏÖµ */
 
-/* é¡µé¢èƒŒæ™¯é¢œè‰² */
+/* Ò³Ãæ±³¾°ÑÕÉ« */
 body { background-color: #FFFFFF; color:#000000 }
 
-/* æ ‡é¢˜ */
+/* ±êÌâ */
 h1 { font-size: 145% }
 
-/* è¡¨æ ¼é¢œè‰² */
-.TableHeadingColor     { background: #CCCCFF; color:#000000 } /* æ·±ç´«è‰² */
-.TableSubHeadingColor  { background: #EEEEFF; color:#000000 } /* æ·¡ç´«è‰² */
-.TableRowColor         { background: #FFFFFF; color:#000000 } /* ç™½è‰² */
+/* ±í¸ñÑÕÉ« */
+.TableHeadingColor     { background: #CCCCFF; color:#000000 } /* Éî×ÏÉ« */
+.TableSubHeadingColor  { background: #EEEEFF; color:#000000 } /* µ­×ÏÉ« */
+.TableRowColor         { background: #FFFFFF; color:#000000 } /* °×É« */
 
-/* å·¦ä¾§çš„æ¡†æ¶åˆ—è¡¨ä¸­ä½¿ç”¨çš„å­—ä½“ */
+/* ×ó²àµÄ¿ò¼ÜÁĞ±íÖĞÊ¹ÓÃµÄ×ÖÌå */
 .FrameTitleFont   { font-size: 100%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
 .FrameHeadingFont { font-size:  90%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
 .FrameItemFont    { font-size:  90%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
 
-/* å¯¼èˆªæ å­—ä½“å’Œé¢œè‰² */
-.NavBarCell1    { background-color:#EEEEFF; color:#000000} /* æ·¡ç´«è‰² */
-.NavBarCell1Rev { background-color:#00008B; color:#FFFFFF} /* æ·±è“è‰² */
+/* µ¼º½À¸×ÖÌåºÍÑÕÉ« */
+.NavBarCell1    { background-color:#EEEEFF; color:#000000} /* µ­×ÏÉ« */
+.NavBarCell1Rev { background-color:#00008B; color:#FFFFFF} /* ÉîÀ¶É« */
 .NavBarFont1    { font-family: Arial, Helvetica, sans-serif; color:#000000;color:#000000;}
 .NavBarFont1Rev { font-family: Arial, Helvetica, sans-serif; color:#FFFFFF;color:#FFFFFF;}
 
