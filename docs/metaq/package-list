@@ -1,0 +1,8 @@
+com.taobao.metamorphosis.client
+com.taobao.metamorphosis.client.consumer
+com.taobao.metamorphosis.client.consumer.storage
+com.taobao.metamorphosis.client.extension
+com.taobao.metamorphosis.client.extension.producer
+com.taobao.metamorphosis.client.extension.storage
+com.taobao.metamorphosis.client.producer
+com.taobao.metamorphosis.client.transaction
