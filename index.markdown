@@ -28,6 +28,11 @@ title: home
 [team.mei.fm](http://team.mei.fm/)
 : Our team's blog
 
+[cnclojure](http://clojure.cn)
+
+[fnil.me](http://fnil.me)
+: A URL shorten web site written in node.js
+
 ###Contacting me
 
 [Mail/Gtalk](mailto:killme2008@gmail.com)
