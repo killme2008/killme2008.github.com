@@ -1,0 +1,18 @@
+# Zola build output
+public/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Claude Code
+CLAUDE.md
+.mcp.json
+GUIDE.md
