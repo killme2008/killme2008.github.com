@@ -1,13 +1,14 @@
 base_url = "https://blog.fnil.net"
-title = "fnil's blog"
-description = "Personal blog"
-author = "fnil"
+title = "Think and Act as One"
+description = "CEO & Founder of Greptime. Writing about systems, distributed computing, AI & Programming."
+author = "Dennis Zhuang"
 generate_feeds = true
 compile_sass = true
 minify_html = true
 build_search_index = true
 
-default_language = "zh"
+default_language = "en"
+theme = "tabi"
 
 taxonomies = [{name = "tags", feed = true}]
 
@@ -24,13 +25,11 @@ smart_punctuation = true
 
 [markdown.highlighting]
 theme = "catppuccin-frappe"
-style = "class"
 
 [extra]
-theme = "tabi"
 theme_switcher = true
 default_theme = ""
-skin = "teal"
+skin = ""
 
 show_reading_time = true
 show_date = true
@@ -38,13 +37,16 @@ copy_button = true
 toc = true
 
 menu = [
-    { name = "blog", url = "blog", trailing_slash = true },
     { name = "archive", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
 ]
 
 favicon_emoji = "📝"
 
+stylesheets = ["custom.css"]
+
 socials = [
     { name = "github", url = "https://github.com/killme2008", icon = "github" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/dennis-zhuang/", icon = "linkedin" },
+    { name = "x", url = "https://x.com/killme20082", icon = "twitter" },
 ]

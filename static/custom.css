@@ -1,0 +1,282 @@
+/* Notion-like minimal style */
+
+:root {
+  --max-width: 680px;
+  --text-color: #37352f;
+  --text-light: #787774;
+  --border-color: #e9e9e7;
+  --bg-code: rgba(135, 131, 120, 0.1);
+}
+
+/* Base typography - larger, more readable */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Main content width */
+main {
+  max-width: var(--max-width);
+}
+
+/* Article text - larger for comfort */
+article {
+  font-size: 18px;
+}
+
+article p {
+  margin: 1.2em 0;
+  line-height: 1.8;
+}
+
+/* Headings - clear hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.5rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+/* Article h2 with dotted border like Andy's blog */
+article h2 {
+  border-bottom: 1px dotted var(--border-color) !important;
+  padding-bottom: 0.3rem !important;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s;
+}
+
+a:hover {
+  text-decoration-color: var(--text-color);
+}
+
+/* Inline code - Notion style */
+:not(pre) > code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--bg-code);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #eb5757;
+}
+
+/* Code block top bar - gray */
+pre code::before {
+  background-color: #e5e5e5 !important;
+  color: #666 !important;
+}
+
+.copy-code {
+  background: #666 !important;
+}
+
+/* Scrollbar - thin and gray */
+pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 3px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 transparent;
+}
+
+/* Blockquote - subtle */
+blockquote {
+  margin: 1.5em 0;
+  padding: 0 0 0 1em;
+  border-left: 2px solid var(--border-color);
+  color: var(--text-light);
+  font-style: normal;
+}
+
+/* Lists - comfortable spacing */
+ul, ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 1.75;
+}
+
+li > ul, li > ol {
+  margin: 0.4em 0;
+}
+
+/* ToC - compact, minimal spacing */
+.toc-container {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.toc-container h3 {
+  margin: 0 0 0.5rem 0 !important;
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc-container ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.toc-container li {
+  margin: 0.25em 0;
+}
+
+.toc-container ul ul {
+  padding-left: 1rem;
+}
+
+.toc-container a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.toc-container a:hover {
+  color: var(--text-color);
+}
+
+/* Strong/Bold - not too heavy */
+strong, b {
+  font-weight: 600;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2.5rem 0;
+}
+
+/* Footnotes */
+.footnote-definition {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --text-color: #e0e0e0;
+  --text-light: #9b9b9b;
+  --border-color: #3d3d3d;
+  --bg-code: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] :not(pre) > code {
+  color: #ff7b72;
+}
+
+/* Share buttons */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.share-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-code);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  background: var(--text-light);
+  color: white;
+}
+
+.share-x:hover {
+  background: #000;
+}
+
+.share-linkedin:hover {
+  background: #0077b5;
+}
+
+[data-theme="dark"] .share-x:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* License in footer */
+.license {
+  margin-top: 0.5rem;
+  color: var(--text-light);
+}
+
+.license a {
+  color: var(--text-light);
+}
+
+/* Hide some tabi elements for cleaner look */
+.meta-separator {
+  opacity: 0.5;
+}
