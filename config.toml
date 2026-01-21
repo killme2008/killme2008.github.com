@@ -50,3 +50,7 @@ socials = [
     { name = "linkedin", url = "https://www.linkedin.com/in/dennis-zhuang/", icon = "linkedin" },
     { name = "x", url = "https://x.com/killme20082", icon = "twitter" },
 ]
+
+[extra.analytics]
+service = "goatcounter"
+id = "fnil"
