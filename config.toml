@@ -41,7 +41,7 @@ menu = [
     { name = "tags", url = "tags", trailing_slash = true },
 ]
 
-favicon_emoji = "📝"
+favicon = "img/favicon.png"
 
 stylesheets = ["custom.css"]
 
