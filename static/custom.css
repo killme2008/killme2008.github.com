@@ -190,9 +190,15 @@ li > ul, li > ol {
   color: var(--text-color);
 }
 
-/* Strong/Bold - not too heavy */
+/* Strong/Bold - highlighted */
 strong, b {
   font-weight: 600;
+  background: linear-gradient(to top, rgba(245, 200, 80, 0.25) 35%, transparent 35%);
+}
+
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  background: linear-gradient(to top, rgba(245, 200, 80, 0.15) 35%, transparent 35%);
 }
 
 /* Horizontal rule */
