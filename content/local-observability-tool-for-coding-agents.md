@@ -54,7 +54,7 @@ Or install manually:
 
 ```bash
 curl -fsSL https://tma1.ai/install.sh | bash   # macOS / Linux
-irm https://tma1.ai/install.ps1 | iex           # Windows PowerShell
+irm https://tma1.ai/install.ps1 | iex          # Windows PowerShell
 ```
 
 Then point your agent's OTel exporter at the local endpoint. Per-agent config is in [SKILL.md](https://tma1.ai/SKILL.md).
