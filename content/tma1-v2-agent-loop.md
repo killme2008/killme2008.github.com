@@ -12,7 +12,7 @@ toc = true
 
 ![TMA1 v2: Making the Agent Loop actually loop](/images/tma1-v2-cover.webp)
 
-I've written about [TMA1](https://tma1.ai) before — a fully local observability tool for coding agents, with a built-in dashboard for sessions, tool calls, LLM calls, cost, and anomalies.
+I've [written about TMA1 before](/local-observability-tool-for-coding-agents/) — a fully local observability tool for coding agents, with a built-in dashboard for sessions, tool calls, LLM calls, cost, and anomalies.
 
 I haven't done any marketing for it, but it's quietly picked up 80+ stars and a few hundred installs.
 
@@ -146,3 +146,9 @@ tma1 build --watch -- <build cmd>
 For example, `tma1 build --watch -- npm run dev`.
 
 It's still pretty early. Feedback and PRs both welcome.
+
+## References
+
+- TMA1 website: [tma1.ai](https://tma1.ai)
+- Source code: [github.com/tma1-ai/tma1](https://github.com/tma1-ai/tma1)
+- v1 background: [Observing my coding agents without leaving localhost](/local-observability-tool-for-coding-agents/)
