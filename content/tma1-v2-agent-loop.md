@@ -12,7 +12,7 @@ toc = true
 
 ![TMA1 v2: Making the Agent Loop actually loop](/images/tma1-v2-cover.webp)
 
-I've [written about TMA1 before](/local-observability-tool-for-coding-agents/) — a fully local observability tool for coding agents, with a built-in dashboard for sessions, tool calls, LLM calls, cost, and anomalies.
+I've written about [TMA1](https://tma1.ai) [before](/local-observability-tool-for-coding-agents/) — a fully local observability tool for coding agents, with a built-in dashboard for sessions, tool calls, LLM calls, cost, and anomalies.
 
 I haven't done any marketing for it, but it's quietly picked up 80+ stars and a few hundred installs.
 
