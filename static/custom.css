@@ -1,7 +1,7 @@
 /* Notion-like minimal style */
 
 :root {
-  --max-width: 680px;
+  --max-width: 780px;
   --text-color: #37352f;
   --text-light: #787774;
   --border-color: #e9e9e7;
@@ -20,6 +20,8 @@ body {
 /* Main content width */
 main {
   max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Article text - larger for comfort */
@@ -90,14 +92,46 @@ a:hover {
   color: #eb5757;
 }
 
-/* Code block top bar - gray */
+/* Code blocks: subtle bg, no top label bar; keep syntax colors */
+pre {
+  background-color: var(--bg-code) !important;
+  border: 1px solid var(--border-color);
+  padding-block-start: 1rem !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+pre code {
+  background-color: transparent !important;
+  font-family: inherit;
+}
+
+/* Hide the language label bar entirely */
 pre code::before {
-  background-color: #e5e5e5 !important;
-  color: #666 !important;
+  display: none !important;
 }
 
 .copy-code {
-  background: #666 !important;
+  background: var(--text-light) !important;
+}
+
+/* Light-mode syntax palette — override Catppuccin Frappé with Latte
+   so syntax colors stay readable on the light code-block bg. */
+[data-theme="light"] {
+  --rosewater: #dc8a78;
+  --flamingo:  #dd7878;
+  --pink:      #ea76cb;
+  --mauve:     #8839ef;
+  --red:       #d20f39;
+  --maroon:    #e64553;
+  --peach:     #fe640b;
+  --yellow:    #df8e1d;
+  --green:     #40a02b;
+  --teal:      #179299;
+  --sky:       #04a5e5;
+  --blue:      #1e66f5;
+  --lavender:  #7287fd;
+  --text:      #4c4f69;
+  --overlay0:  #9ca0b0;
 }
 
 /* Scrollbar - thin and gray */

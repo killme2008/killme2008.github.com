@@ -25,6 +25,7 @@ smart_punctuation = true
 
 [markdown.highlighting]
 theme = "catppuccin-frappe"
+style = "class"
 
 [extra]
 theme_switcher = true
