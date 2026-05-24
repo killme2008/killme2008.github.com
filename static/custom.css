@@ -69,16 +69,19 @@ article h2 {
   padding-bottom: 0.3rem !important;
 }
 
-/* Links */
+/* Links — only underline prose links inside articles */
 a {
   color: inherit;
+}
+
+article a {
   text-decoration: underline;
   text-decoration-color: var(--border-color);
   text-underline-offset: 2px;
   transition: text-decoration-color 0.15s;
 }
 
-a:hover {
+article a:hover {
   text-decoration-color: var(--text-color);
 }
 
