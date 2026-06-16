@@ -14,7 +14,7 @@ toc = true
 
 > Part 1 was about how the three pillars split apart. This part is about how many smart people, starting in 2018, tried to put them back together — what they actually built, and why none of it quite reached the finish line.
 
-At the end of Part 1 I left a hook: in August 2018, Peter Bourgon, the same person who drew the three-pillars Venn diagram, wrote another blog post. In it he imagined the opposite: a single, unified "super-system."
+At the end of [Part 1](/observability-three-pillars-history/) I left a hook: in August 2018, Peter Bourgon, the same person who drew the three-pillars Venn diagram, wrote another blog post. In it he imagined the opposite: a single, unified "super-system."
 
 This part starts from that overlooked thought experiment. It's worth spelling out, because nearly every attempt to "unify observability" over the next eight years was, in essence, a rediscovery of the reasoning Bourgon laid out back then. Most people just didn't know he'd gotten there first.
 
