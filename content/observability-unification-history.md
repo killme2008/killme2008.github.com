@@ -58,6 +58,8 @@ This was the first time "unification" truly landed at the standards layer. But h
 
 It lets you produce telemetry with one SDK and one set of semantics, then ship it to whatever backend you like. But once the data lands, the three stores are still three stores, and querying across three systems is still querying across three systems. OTel connected the upstream pipe; downstream, the three pools are still three pools.
 
+![OTel connected the upstream pipe; downstream, still three pools](/images/observability-unification-history-otel-pools.webp)
+
 OTel's most underrated legacy is actually something else: semantic conventions. What `http.request.method` should be called, which standard fields a database-call span should carry, these names got distilled into an industry consensus. At the time everyone treated it as the unglamorous work of aligning field names, but the payoff wouldn't really show up until years later. I'll leave this thread buried here; a follow-up piece explains why it suddenly matters.
 
 (A timely footnote: just a week before this piece was written, on May 21, 2026, OTel announced its graduation from the CNCF, second only to Kubernetes in project velocity[^4]. From a 2019 merger born to heal a split, to today's de facto standard, it took a full seven years.)
@@ -83,6 +85,8 @@ So when I cite Observability 2.0, I'm not treating it as a settled, victorious c
 ## So, was unification ever actually done?
 
 By now you're probably asking: the idea exists (Bourgon), the critique exists (Sigelman), the standard exists (OTel), the new paradigm exists (Observability 2.0), and there's a pile of startups. So was "unification" ever actually done?
+
+![Putting the three pillars back together: four tries in eight years, one late answer](/images/observability-unification-history-timeline.webp)
 
 Let me be honest about one fact first. If what you're asking is "has anyone put all three signals into one columnar store, queried them uniformly, and held up at production scale," then the answer is yes, and more than one team has.
 
