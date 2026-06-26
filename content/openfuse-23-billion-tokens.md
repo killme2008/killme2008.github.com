@@ -12,7 +12,7 @@ toc = true
 
 ![I Burned 23 Billion Tokens to "Rewrite" Langfuse](/images/openfuse-23-billion-tokens-cover.webp)
 
-TMA1 broke down this project's token spend by cwd (the project is a Langfuse fork). Claude Code came to `23,448,326,730`, about 23.4 billion.
+[TMA1](https://tma1.ai/) broke down this project's token spend by cwd (the project is a Langfuse fork). Claude Code came to `23,448,326,730`, about 23.4 billion.
 
 That number is less scary than it looks. 98% of it is cache read (23 billion), prompt-caching hits that are basically free. The real non-cached input + output is only 123M. Codex adds a rough couple hundred million on top, again mostly cache.
 
