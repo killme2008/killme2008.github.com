@@ -14,13 +14,11 @@ GitHub has been falling over a lot lately. Its own monthly availability reports 
 
 The numbers behind it are more remarkable. GitHub Actions went from 500 million compute minutes per week in 2023 to a billion in 2025, then hit 2.1 billion in a single week in early 2026. Pull requests opened by AI coding agents went from about 4 million in September 2025 to more than 17 million by March. GitHub's CTO said they started executing a 10x capacity plan in October 2025; four months later they concluded they had to design for 30x. By May, GitHub reported it had more than doubled its effective capacity since February, and named the driver plainly: AI-assisted and agentic development workflows.
 
+![GitHub Actions weekly compute minutes, 2023 to early 2026](/images/when-agents-go-to-production-github-actions.webp)
+
+*Data: GitHub monthly availability reports and CTO commentary, 2023–2026.*
+
 I gave a talk at Ant Group recently about exactly this: when agents go to production, what happens to infrastructure? Not a survey of agent infra components. I wanted to start from two plain facts and push downward until I hit something that felt like a first principle. This post is the written version of that argument. I run an infrastructure company (GreptimeDB, an open-source observability database), so I have an obvious bias here. Keep that in mind and discount accordingly.
-
-The whole argument fits in one picture:
-
-<a href="/images/when-agents-go-to-production-infographic.webp" target="_blank" rel="noopener" aria-label="Open the full-size diagram"><img src="/images/when-agents-go-to-production-infographic.webp" alt="When Agents Go to Production: the argument in one picture" width="2560" height="1440" loading="lazy"></a>
-
-*Click the diagram to open it full size.*
 
 ## Two shifts
 
@@ -57,6 +55,12 @@ In that loop, infra is the roads. Nothing moves without roads, but roads are not
 With that framing in place, the next question is where the value actually comes from.
 
 ## The gap is the value
+
+The whole argument fits in one picture:
+
+<a href="/images/when-agents-go-to-production-infographic.webp" target="_blank" rel="noopener" aria-label="Open the full-size diagram"><img src="/images/when-agents-go-to-production-infographic.webp" alt="When Agents Go to Production: the argument in one picture" width="2560" height="1440" loading="lazy"></a>
+
+*Click the diagram to open it full size.*
 
 Here's the first-principles move. Imagine an ideal agent: unlimited knowledge, unlimited compute, perfect long memory, error-free execution, operating in a fully predictable world. Now check those five assumptions against physical reality. Every single one fails, and each failure is a pressure that lands on infrastructure. The table in the image above walks through all five; I won't repeat it line by line.
 
