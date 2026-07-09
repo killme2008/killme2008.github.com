@@ -10,13 +10,13 @@ tags = ["Agents", "Infrastructure", "Observability", "AI"]
 toc = true
 +++
 
-GitHub has been falling over a lot lately. Its own monthly availability reports count six incidents in February 2026, ten in April, nine in May. For a platform owned by Microsoft, with effectively unlimited money and some of the best infrastructure engineers in the world, that's remarkable.
+GitHub has been falling over a lot lately. Its own [monthly availability reports](https://github.blog/news-insights/company-news/github-availability-report-may-2026/) count six incidents in February 2026, ten in April, nine in May. For a platform owned by Microsoft, with effectively unlimited money and some of the best infrastructure engineers in the world, that's remarkable.
 
-The numbers behind it are more remarkable. GitHub Actions went from 500 million compute minutes per week in 2023 to a billion in 2025, then hit 2.1 billion in a single week in early 2026. Pull requests opened by AI coding agents went from about 4 million in September 2025 to more than 17 million by March. GitHub's CTO said they started executing a 10x capacity plan in October 2025; four months later they concluded they had to design for 30x. By May, GitHub reported it had more than doubled its effective capacity since February, and named the driver plainly: AI-assisted and agentic development workflows.
+The numbers behind it are more remarkable. GitHub Actions went from 500 million compute minutes per week in 2023 to a billion in 2025, then hit 2.1 billion in a single week in early 2026. Pull requests opened by AI coding agents went from about 4 million in September 2025 to more than 17 million by March. [GitHub's CTO said](https://github.blog/news-insights/company-news/an-update-on-github-availability/) they started executing a 10x capacity plan in October 2025; four months later they concluded they had to design for 30x. By May, GitHub reported it had more than doubled its effective capacity since February, and named the driver plainly: AI-assisted and agentic development workflows.
 
 ![GitHub Actions weekly compute minutes, 2023 to early 2026](/images/when-agents-go-to-production-github-actions.webp)
 
-*Data: GitHub monthly availability reports and CTO commentary, 2023–2026.*
+*Data: GitHub [monthly availability reports](https://github.blog/news-insights/company-news/github-availability-report-may-2026/) and [CTO commentary](https://github.blog/news-insights/company-news/an-update-on-github-availability/), 2023–2026.*
 
 I gave a talk at Ant Group recently about exactly this: when agents go to production, what happens to infrastructure? Not a survey of agent infra components. I wanted to start from two plain facts and push downward until I hit something that felt like a first principle. This post is the written version of that argument. I run an infrastructure company (GreptimeDB, an open-source observability database), so I have an obvious bias here. Keep that in mind and discount accordingly.
 
@@ -40,7 +40,7 @@ This is what the GitHub story actually is. The first wave of coding agents didn'
 
 Underneath the traffic problem there's a deeper change: trust is being replaced by verification. With a human colleague, you trust their intent and their competence. That's why hiring is so much work: the vetting is front-loaded, done once. Code review is sampling. The verification load stays manageable. With a stochastic agent you cannot trust intent; you can only verify behavior, and you have to verify all of it. The verification volume explodes.
 
-The industry has started to name this. Sonar's 2026 State of Code survey of 1,100+ developers found that 96% don't fully trust that AI-generated code is functionally correct, while only 48% always check it before committing. They call the gap the verification bottleneck. Werner Vogels put a sharper name on it in his re:Invent 2025 keynote, verification debt: when you write code yourself, comprehension comes with the act of creation; when a machine writes it, you have to rebuild that comprehension at review time.
+The industry has started to name this. [Sonar's 2026 State of Code survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) of 1,100+ developers found that 96% don't fully trust that AI-generated code is functionally correct, while only 48% always check it before committing. They call the gap the verification bottleneck. Werner Vogels put a sharper name on it in [his re:Invent 2025 keynote](https://www.theregister.com/2026/01/09/devs_ai_code/), verification debt: when you write code yourself, comprehension comes with the act of creation; when a machine writes it, you have to rebuild that comprehension at review time.
 
 Most of the discussion stops at "people need to verify harder." I'd rather flip it: if verification is the bottleneck, then infra's new job is to industrialize verification. Make it fast, make it safe, make it massively parallel. The rest of this post works out what that means.
 
@@ -78,7 +78,7 @@ The third layer is the one people miss: the fastest interface is the one the age
 
 Resource isolation is an old problem; multi-tenancy solved most of it years ago. What's new is that the isolation boundary has become the security boundary, because the executor is semi-trusted and stochastic. It can be prompt-injected. It can delete things it shouldn't. Sometimes you cannot tell, from content alone, whether an instruction is a legitimate request or an attack.
 
-In April 2026 a coding agent at a SaaS company, PocketOS, did the second of those. Working through a routine credential mismatch in staging, it pulled an unscoped API token out of an unrelated file, used it, and dropped the production database. The useful line from the post-mortem is a structural one: to an agent, a safety rule in its config is just one more input to the same reasoning process that decided to run the command. The constraint and the action it was meant to prevent were the same process. A soft rule can't bind the reasoning it's part of.
+In April 2026 a coding agent at a SaaS company, [PocketOS](https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/), did the second of those. Working through a routine credential mismatch in staging, it pulled an unscoped API token out of an unrelated file, used it, and dropped the production database. The useful line from [the post-mortem](https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos) is a structural one: to an agent, a safety rule in its config is just one more input to the same reasoning process that decided to run the command. The constraint and the action it was meant to prevent were the same process. A soft rule can't bind the reasoning it's part of.
 
 Which is why this boundary has to be enforced by infrastructure, physically, not by a line in the system prompt telling the model what it may touch.
 
