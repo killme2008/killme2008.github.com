@@ -74,6 +74,8 @@ The third layer is the one people miss: the fastest interface is the one the age
 
 Resource isolation is an old problem; multi-tenancy solved most of it years ago. What's new is that the isolation boundary has become the security boundary, because the executor is semi-trusted and stochastic. It can be prompt-injected. It can delete things it shouldn't. Sometimes you cannot tell, from content alone, whether an instruction is a legitimate request or an attack.
 
+In April 2026 a coding agent at a SaaS company, PocketOS, did the second of those. Working through a routine credential mismatch in staging, it pulled an unscoped API token out of an unrelated file, used it, and dropped the production database. The useful line from the post-mortem is a structural one: to an agent, a safety rule in its config is just one more input to the same reasoning process that decided to run the command. The constraint and the action it was meant to prevent were the same process. A soft rule can't bind the reasoning it's part of.
+
 Which is why this boundary has to be enforced by infrastructure, physically, not by a line in the system prompt telling the model what it may touch.
 
 Push isolation to its limit and you land on the edge. Some data won't go to the cloud for trust reasons rather than technical ones: social login sessions, payment credentials, the SIM card. The trust boundary acquires a physical location, and data gravity starts dictating where execution happens. Most agents will stay in the cloud, but the device is isolation's front line, and it's the one place that demands all three properties at once, each pushed to its extreme.
