@@ -40,7 +40,7 @@ Complexity doesn't evaporate when you compress one stage of the pipeline. It mig
 
 This is what the GitHub story actually is. The first wave of coding agents didn't hit the IDE. It hit CI/CD. Every agent-opened PR triggers CI runs, webhook fan-outs, runner allocation, index updates. GitHub was capacity-planned for human rhythms, for people who log in through a UI and sleep on weekends, and agents do neither.
 
-Underneath the traffic problem there's a deeper change: trust is being replaced by verification. With a human colleague, you trust their intent and their competence. Code review is sampling. The verification load stays manageable. With a stochastic agent you cannot trust intent; you can only verify behavior, and you have to verify all of it. The verification volume explodes.
+Underneath the traffic problem there's a deeper change: trust is being replaced by verification. With a human colleague, you trust their intent and their competence. That's why hiring is so much work: the vetting is front-loaded, done once. Code review is sampling. The verification load stays manageable. With a stochastic agent you cannot trust intent; you can only verify behavior, and you have to verify all of it. The verification volume explodes.
 
 The industry has started to name this. Sonar's 2026 State of Code survey of 1,100+ developers found that 96% don't fully trust that AI-generated code is functionally correct, while only 48% always check it before committing. They call the gap the verification bottleneck. Werner Vogels put a sharper name on it in his re:Invent 2025 keynote, verification debt: when you write code yourself, comprehension comes with the act of creation; when a machine writes it, you have to rebuild that comprehension at review time.
 
