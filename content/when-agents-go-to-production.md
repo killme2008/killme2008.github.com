@@ -18,11 +18,7 @@ I gave a talk at Ant Group recently about exactly this: when agents go to produc
 
 The whole argument fits in one picture:
 
-<div class="full-width">
-<a href="/images/when-agents-go-to-production-infographic.webp" target="_blank" rel="noopener" aria-label="Open the full-size diagram">
-<img src="/images/when-agents-go-to-production-infographic.webp" alt="When Agents Go to Production: the argument in one picture" width="2560" height="1440" loading="lazy" style="width:100%;height:auto;">
-</a>
-</div>
+<a href="/images/when-agents-go-to-production-infographic.webp" target="_blank" rel="noopener" aria-label="Open the full-size diagram"><img src="/images/when-agents-go-to-production-infographic.webp" alt="When Agents Go to Production: the argument in one picture" width="2560" height="1440" loading="lazy"></a>
 
 *Click the diagram to open it full size.*
 
