@@ -60,7 +60,7 @@ As [the first part of this series](/observability-three-pillars-history/) argued
 
 **Columnar storage and vectorized execution matured into an ecosystem.** Apache Arrow, DataFusion, Parquet: after 2020 these turned into a foundation you could build on directly. Building a query engine that handles several workloads at once used to mean starting from zero; now you stand on top of these components. It's badly underrated how much this cut the effort of building a unified engine.
 
-**Rust went mainstream in data infrastructure.** C++-level performance with memory safety matters a lot for an engine carrying metrics, logs, and traces at once. InfluxDB 3.0 was rewritten in Rust on Arrow/DataFusion, and Databend and GreptimeDB ride the same wave. A complex multi-workload engine like this used to be one careless slip from a segfault or a data race in C++; Rust makes it maintainable again.
+**Rust went mainstream in data infrastructure.** C++-level performance with memory safety matters a lot for an engine carrying metrics, logs, and traces at once. InfluxDB 3.0 was rewritten in Rust on Arrow/DataFusion, and Databend and [GreptimeDB](https://github.com/GreptimeTeam/greptimedb) ride the same wave. A complex multi-workload engine like this used to be one careless slip from a segfault or a data race in C++; Rust makes it maintainable again.
 
 **OpenTelemetry standardized the collection layer.** This picks up a thread from the last piece: OTel's biggest practical effect is cutting migration friction by an order of magnitude. Swapping observability backends used to mean rewriting all the instrumentation in your code, so nobody dared. Now, if your app speaks OTel, any backend that supports OTLP can step in. That knocks down the tallest wall for every newcomer.
 
