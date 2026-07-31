@@ -30,10 +30,18 @@ The user typically provides a cover and optional illustrations (often by image p
 
 - Convert to webp with `cwebp` into `static/images/`:
   ```bash
-  cwebp -q 88 "<cover.png>" -o static/images/<slug>-cover.webp
+  cwebp -q 88 -resize 2000 0 "<cover.png>" -o static/images/<slug>-cover.webp
   cwebp -q 90 "<illustration.png>" -o static/images/<slug>-<name>.webp
   ```
 - Cover goes at the very top of the post: `![<title>](/images/<slug>-cover.webp)`
+- **Also make a JPG copy of the cover for the social card.** LinkedIn does not reliably
+  render `webp` in `og:image`, so the card needs a JPG alongside the webp:
+  ```bash
+  sips -Z 1600 --setProperty format jpeg --setProperty formatOptions 85 \
+    "<cover.png>" --out static/images/<slug>-cover.jpg
+  ```
+  Then set `social_media_card = "/images/<slug>-cover.jpg"` in the post's `[extra]`
+  (see step 4). The tabi theme turns that into `og:image` + `twitter:card`.
 - **Illustrations that come from a source MUST be attributed.** Put an italic caption line right below the image:
   ```markdown
   ![alt](/images/<slug>-foo.webp)
@@ -58,6 +66,7 @@ tags = ["Tag1", "Tag2"]   # Title Case
 
 [extra]
 toc = true
+social_media_card = "/images/<slug>-cover.jpg"   # drives og:image / twitter:card
 +++
 ```
 
@@ -88,7 +97,7 @@ Must report `0 orphan`. Optionally confirm the references list rendered (e.g. gr
 This repo deploys via GitHub Actions on push to `master`, so committing to `master` and pushing is the intended flow.
 
 ```bash
-git add content/<slug>.md static/images/<slug>-*.webp
+git add content/<slug>.md static/images/<slug>-*.webp static/images/<slug>-cover.jpg
 git commit -m "feat: new blog - <short title>"
 git push origin master
 ```
@@ -100,6 +109,6 @@ git push origin master
 - Posts: `content/<slug>.md` (flat, not `content/blog/`)
 - Images: `static/images/<slug>-*.webp`, converted with `cwebp` (q 88–90)
 - Tags: Title Case
-- `[extra] toc = true` is standard
+- `[extra] toc = true` is standard; add `social_media_card` whenever there's a cover
 - English only; no AI signature in commits
 - Don't use the `full_width_image` shortcode for screenshots — plain markdown `![]()` looks better

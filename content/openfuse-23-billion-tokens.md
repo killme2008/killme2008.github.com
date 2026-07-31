@@ -8,6 +8,7 @@ tags = ["GreptimeDB", "Observability", "AI", "Vibe Coding"]
 
 [extra]
 toc = true
+social_media_card = "/images/openfuse-23-billion-tokens-cover.jpg"
 +++
 
 ![I Burned 23 Billion Tokens to "Rewrite" Langfuse](/images/openfuse-23-billion-tokens-cover.webp)

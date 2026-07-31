@@ -8,6 +8,7 @@ tags = ["Observability", "OpenTelemetry", "Metrics", "Tracing"]
 
 [extra]
 toc = true
+social_media_card = "/images/observability-unification-history-cover.jpg"
 +++
 
 ![The Three Pillars of Observability: The Unification That Never Quite Arrived](/images/observability-unification-history-cover.webp)

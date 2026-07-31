@@ -8,6 +8,7 @@ tags = ["AI", "Team", "Productivity"]
 
 [extra]
 toc = true
+social_media_card = "/images/ai-native-cover.jpg"
 +++
 
 A few days ago, I posted that our team is going AI Native. A friend asked: if I use ChatGPT for copywriting and Copilot for code completion, does that count?

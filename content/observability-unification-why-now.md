@@ -8,6 +8,7 @@ tags = ["Observability", "OpenTelemetry", "LLM", "AI Agents"]
 
 [extra]
 toc = true
+social_media_card = "/images/observability-unification-why-now-cover.jpg"
 +++
 
 ![Why Now: The Eight-Year Wait for Unified Observability](/images/observability-unification-why-now-cover.webp)

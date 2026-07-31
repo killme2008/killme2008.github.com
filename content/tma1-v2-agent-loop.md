@@ -8,6 +8,7 @@ tags = ["Open Source", "AI", "Observability"]
 
 [extra]
 toc = true
+social_media_card = "/images/tma1-v2-cover.jpg"
 +++
 
 ![TMA1 v2: Making the Agent Loop actually loop](/images/tma1-v2-cover.webp)

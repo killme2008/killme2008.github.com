@@ -8,6 +8,7 @@ tags = ["Observability", "Metrics", "Logging", "Tracing"]
 
 [extra]
 toc = true
+social_media_card = "/images/observability-three-pillars-history-cover.jpg"
 +++
 
 ![The Three Pillars of Observability: A History No One Planned](/images/observability-three-pillars-history-cover.webp)

@@ -8,7 +8,12 @@ tags = ["Database", "Distributed Systems", "Architecture", "Bigtable"]
 
 [extra]
 toc = true
+social_media_card = "/images/bigtable-at-twenty-cover.jpg"
 +++
+
+![Bigtable at Twenty: What Stayed and What Got Rebuilt](/images/bigtable-at-twenty-cover.webp)
+
+> SIGMOD Companion '26 has a 13-page paper by more than 50 Google authors revisiting Bigtable two decades on. 10 EB, 7 billion QPS, and an architecture that barely moved. This is my reading of why.
 
 SIGMOD Companion '26 includes a paper called [*Twenty Years of Bigtable*](https://dl.acm.org/doi/pdf/10.1145/3788853.3803095). It has more than 50 Google authors and runs 13 pages. The paper revisits the 2006 OSDI Bigtable paper two decades later: what got added, what got taken apart, and what went wrong in production.
 

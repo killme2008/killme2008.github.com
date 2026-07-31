@@ -8,6 +8,7 @@ tags = ["Observability", "AI", "Datadog"]
 
 [extra]
 toc = true
+social_media_card = "/images/datadog-ai-observability-cover.jpg"
 +++
 
 ![When Systems Turn Uncertain: How Datadog Sees Observability in the AI Era](/images/datadog-ai-observability-cover.webp)
