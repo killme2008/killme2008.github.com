@@ -40,6 +40,7 @@ toc = true
 menu = [
     { name = "archive", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
+    { name = "about", url = "about", trailing_slash = true },
 ]
 
 favicon = "img/favicon.png"
