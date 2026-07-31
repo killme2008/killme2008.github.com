@@ -129,7 +129,7 @@ CRDTs borrowed LSM compaction. Materialized views borrowed the logical clocks an
 
 When I judge how long a storage architecture will last, the first practical question I ask is: when the next major feature arrives, where does it attach?
 
-If the answer is always "the write path," the system will eventually be crushed by its own history.
+If the answer keeps being "you rewrite the main read or write path," the system will eventually be crushed by its own history.
 
 ## Correctness runs in the background too
 
@@ -213,7 +213,7 @@ I expect to reread this paper a few more times. It leaves me with two questions 
 
 First, do the background jobs we run, including compaction, flush, and index building, carry the same interaction risk as replication and GC? Each mechanism may be sound on its own while violating an implicit assumption when combined with another.
 
-Second, how often have our major features touched the write path?
+Second, how often have our major features forced a change to the main read or write path?
 
 I do not know the answer to the second one yet.
 
