@@ -37,13 +37,13 @@ This is not an argument that asynchronous processing is inherently better. It mo
 
 ## First, make state movable
 
-Bigtable does not keep data on the tablet server's local disk. It keeps it in Colossus. Moving a tablet therefore does not move data; it just hands the tablet to another server.
+Bigtable does not keep data on the tablet server's local disk. It keeps it in [Colossus](https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system), the cluster-level file system that succeeded GFS. Moving a tablet therefore does not move data; it just hands the tablet to another server.
 
 The cost is obvious: every read goes through a network file system. So is the benefit: compute and state are separate, and a tablet becomes a scheduling unit you can detach and hand to another machine.
 
 Autoscaling, load balancing, external compaction, and offline access all depend on that decision. If the data were pinned to local disks, every one of those would have been much harder. We made the same bet in GreptimeDB, where [compute and storage are decoupled](https://docs.greptime.com/user-guide/concepts/architecture/) and a region migration hands the region to another datanode without copying any data.
 
-Metadata got the same treatment. Bigtable stores its metadata in its own tables and keeps only the bootstrap information needed to locate the first metadata tablet in Chubby. The system manages itself, with very little external state to maintain separately.
+Metadata got the same treatment. Bigtable stores its metadata in its own tables and keeps only the bootstrap information needed to locate the first metadata tablet in [Chubby](https://research.google/pubs/the-chubby-lock-service-for-loosely-coupled-distributed-systems/), Google's lock service. The system manages itself, with very little external state to maintain separately.
 
 Both decisions were already in the 2006 paper. In retrospect, what matters about them is not the work they saved at the time but the doors they left open twenty years later.
 
