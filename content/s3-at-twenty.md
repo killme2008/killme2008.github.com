@@ -21,6 +21,8 @@ Cursor reports 120 pushes per second on S3 Standard, more than 300 on S3 Express
 
 This is Git hosting: small objects, frequent writes, and a hard requirement for linearizable updates. It is not the large-object, sequential-access workload that people usually reach for when explaining why S3 works well.
 
+We built GreptimeDB on object storage from the start, so the shape of Continuity is familiar to me. What I did not expect was the workload. Git hosting sits on the list of things object storage was supposed to be bad at.
+
 Cursor's post is a good excuse to ask how we got here. S3 launched twenty years ago as a simple object store with eventual consistency. It is now the durable source of truth for data warehouses, lakehouses, streaming systems, databases, and, apparently, Git hosting.
 
 That change did not happen all at once. The economics came first. The semantics and latency took much longer.
@@ -34,8 +36,6 @@ Continuity is a clean example. S3 owns durability and the authoritative order of
 This separation now appears across modern data infrastructure. Object storage holds the authoritative data. Compute nodes keep local caches, indexes, or materialized state that can be discarded and rebuilt. Once the local disk stops being the source of truth, compute can scale, fail, and move independently of stored data.
 
 ![S3 as the persistence layer](/images/s3-at-twenty-persistence-layer.webp)
-
-That is the architectural shift this article is about.
 
 ## The economics forced the issue
 
@@ -93,9 +93,7 @@ S3 added create-if-absent writes with `If-None-Match` in August 2024, then ETag-
 
 With strong consistency and conditional writes on the same key, a system can implement operations such as manifest commits, WAL index updates, and catalog pointer changes directly against S3. The coordination has not disappeared; S3 now performs the atomic serialization that previously required DynamoDB, Postgres, or a consensus service beside the object store.
 
-This is the capability Continuity uses. A push first becomes durable as a WAL object. Publishing it requires a conditional update to the WAL index. If two servers race, one wins and the other retries against the new version. There is no repository-level leader election on the correctness path.
-
-That design was not possible on S3 before conditional writes.
+This is the capability Continuity uses. A push first becomes durable as a WAL object. Publishing it requires a conditional update to the WAL index. If two servers race, one wins and the other retries against the new version. There is no repository-level leader election on the correctness path. None of that was possible on S3 before conditional writes.
 
 ### 2025–2026: S3 expanded beyond byte storage
 
@@ -107,7 +105,7 @@ S3 Files followed in April 2026. Built with Amazon EFS, it exposes S3 data over 
 
 In June 2026, S3 added Annotations: up to 1,000 mutable metadata payloads per object, each independently addressable and queryable through S3 Metadata tables. Tags were useful for lifecycle and access policies; annotations can carry much larger application context without rewriting the object.
 
-Vectors, Files, and Annotations solve different problems, and none of them makes S3 a database by itself. But put them next to strong consistency, conditional writes, and Express One Zone, and the original contract is almost hard to recognize. The old description of S3 as a slow bucket for immutable blobs no longer fits.
+Vectors, Files, and Annotations solve different problems, and none of them makes S3 a database by itself. But put them next to strong consistency, conditional writes, and Express One Zone, and the original contract is almost hard to recognize.
 
 ## Systems stopped waiting
 
@@ -141,7 +139,7 @@ S3 became good enough to own durability and authoritative state for systems that
 
 By 2026, if a new cloud data infrastructure system does not use S3 as its source of truth, that should be a workload-specific decision rather than an inherited default.
 
-GreptimeDB has followed this architecture since day one. Time-series and observability data were an early fit because writes are append-heavy, volume is difficult to predict, and retention spans hot and cold data. GreptimeDB persists immutable table data to object storage, uses local disk as a buffer and cache, and keeps unflushed state in its WAL. Storage capacity is not tied to a fixed compute fleet.
+We made that decision for GreptimeDB on day one, before conditional writes existed. Time-series and observability data were an early fit because writes are append-heavy, volume is difficult to predict, and retention spans hot and cold data. GreptimeDB persists immutable table data to object storage, uses local disk as a buffer and cache, and keeps unflushed state in its WAL. Storage capacity is not tied to a fixed compute fleet.
 
 Cursor's Continuity shows that the pattern has moved well beyond analytical data. A workload once considered too small-write-heavy, latency-sensitive, and consistency-sensitive for S3 is now built around it.
 
