@@ -11,6 +11,8 @@ toc = true
 social_media_card = "/images/s3-at-twenty-cover.jpg"
 +++
 
+![Twenty years of S3](/images/s3-at-twenty-timeline.webp)
+
 Cursor published [a piece](https://cursor.com/blog/git-at-any-scale) this week on Continuity, the Git storage system behind its Origin hosting platform. The design would have sounded strange not long ago.
 
 Continuity keeps a write-ahead log on S3 and does not acknowledge a push until the data is durable there. The Git repositories on local NVMe are warm caches. Any server can accept a push; rendezvous hashing picks the preferred primary, but correctness does not depend on that choice. Concurrent updates are serialized through S3's atomic conditional writes.
@@ -30,6 +32,8 @@ Calling S3 the persistence layer does not mean sending every read and write on t
 Continuity is a clean example. S3 owns durability and the authoritative order of updates. Local NVMe makes Git operations fast. If a local copy disappears, the system can rebuild it from the WAL. The cache is important for performance, but it is not part of the durability model.
 
 This separation now appears across modern data infrastructure. Object storage holds the authoritative data. Compute nodes keep local caches, indexes, or materialized state that can be discarded and rebuilt. Once the local disk stops being the source of truth, compute can scale, fail, and move independently of stored data.
+
+![S3 as the persistence layer](/images/s3-at-twenty-persistence-layer.webp)
 
 That is the architectural shift this article is about.
 
@@ -105,8 +109,6 @@ In June 2026, S3 added Annotations: up to 1,000 mutable metadata payloads per ob
 
 Vectors, Files, and Annotations solve different problems, and none of them makes S3 a database by itself. But put them next to strong consistency, conditional writes, and Express One Zone, and the original contract is almost hard to recognize. The old description of S3 as a slow bucket for immutable blobs no longer fits.
 
-![Twenty years of S3](/images/s3-at-twenty-timeline.webp)
-
 ## Systems stopped waiting
 
 The warehouse and lakehouse world went first. Snowflake, Databricks, ClickHouse Cloud, and the Iceberg/Delta/Hudi ecosystem all treat object storage as durable data and keep compute replaceable. Streaming systems followed: AutoMQ and WarpStream rebuilt Kafka-compatible services around object storage instead of fleets of brokers holding authoritative local disks.
@@ -118,6 +120,8 @@ Continuity matters because it removes the usual escape clause. Git hosting is no
 The local repositories still matter. Git wants random access to packfiles, and NVMe remains the right place to execute those operations. What changed is the recovery and consistency boundary. Local repositories can be created, replicated, compacted, or deleted without becoming the source of truth.
 
 That pattern scales down as well as up. A busy monorepo can have many read replicas. An idle repository can have none until the next request rematerializes it. The durable copy does not force a minimum fleet of continuously provisioned replicas.
+
+![Modern data infrastructure built around S3](/images/s3-at-twenty-data-infrastructure.webp)
 
 ## The rest of the storage engine still matters
 
