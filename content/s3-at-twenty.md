@@ -99,7 +99,7 @@ This is the capability Continuity uses. A push first becomes durable as a WAL ob
 
 Consistency and conditional writes are what make the Continuity design possible. The additions that followed are different: they show how much more of the data layer AWS wants S3 to own.
 
-S3 Vectors became generally available in December 2025. It added native vector indexes and similarity queries, with up to two billion vectors per index and twenty trillion per bucket. Query latency starts around 100 milliseconds for frequently accessed indexes and remains under a second for infrequent queries. That is not a replacement for every vector database, but it is a new workload running inside S3 rather than merely storing files underneath one.
+S3 Vectors became generally available in December 2025. It added native vector indexes and similarity queries, with up to two billion vectors per index and 10,000 indexes per vector bucket. Query latency starts around 100 milliseconds for frequently accessed indexes and remains under a second for infrequent queries. That is not a replacement for every vector database, but it is a new workload running inside S3 rather than merely storing files underneath one.
 
 S3 Files followed in April 2026. Built with Amazon EFS, it exposes S3 data over NFS 4.1 and 4.2 with file-system semantics and low latency for active files. Writes reach the file system immediately but are exported back to the bucket after a period of inactivity, so applications that mix NFS and S3 API access need to account for that synchronization window.
 
