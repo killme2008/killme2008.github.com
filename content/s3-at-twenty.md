@@ -95,9 +95,11 @@ With strong consistency and conditional writes on the same key, a system can imp
 
 This is the capability Continuity uses. A push first becomes durable as a WAL object. Publishing it requires a conditional update to the WAL index. If two servers race, one wins and the other retries against the new version. There is no repository-level leader election on the correctness path. None of that was possible on S3 before conditional writes.
 
-### 2025–2026: S3 expanded beyond byte storage
+### 2024–2026: S3 expanded beyond byte storage
 
 Consistency and conditional writes are what make the Continuity design possible. The additions that followed are different: they show how much more of the data layer AWS wants S3 to own.
+
+The turn started at re:Invent 2024 with S3 Tables. Table buckets became a third bucket type alongside general purpose and directory buckets, holding Apache Iceberg tables that S3 maintains itself: compaction, snapshot expiry, and unreferenced file cleanup all run inside the service. That maintenance work is what Iceberg and Delta Lake users had been running themselves on top of plain buckets. AWS reports up to 3x query throughput and 10x transactions per second against self-managed tables. The rollout ran through 2025, from three Regions to thirty within five months.
 
 S3 Vectors became generally available in December 2025. It added native vector indexes and similarity queries, with up to two billion vectors per index and 10,000 indexes per vector bucket. Query latency starts around 100 milliseconds for frequently accessed indexes and remains under a second for infrequent queries. That is not a replacement for every vector database, but it is a new workload running inside S3 rather than merely storing files underneath one.
 
@@ -105,7 +107,7 @@ S3 Files followed in April 2026. Built with Amazon EFS, it exposes S3 data over 
 
 In June 2026, S3 added Annotations: up to 1,000 mutable metadata payloads per object, each independently addressable and queryable through S3 Metadata tables. Tags were useful for lifecycle and access policies; annotations can carry much larger application context without rewriting the object.
 
-Vectors, Files, and Annotations solve different problems, and none of them makes S3 a database by itself. But put them next to strong consistency, conditional writes, and Express One Zone, and the original contract is almost hard to recognize.
+Tables, Vectors, Files, and Annotations solve different problems, and none of them makes S3 a database by itself. But put them next to strong consistency, conditional writes, and Express One Zone, and the original contract is almost hard to recognize.
 
 ## Systems stopped waiting
 
@@ -158,6 +160,7 @@ That is a more useful measure of S3's first twenty years than the number of feat
 - [Mountpoint for S3 file system semantics](https://github.com/awslabs/mountpoint-s3/blob/main/doc/SEMANTICS.md)
 - [S3 conditional writes, `If-None-Match`](https://aws.amazon.com/about-aws/whats-new/2024/08/amazon-s3-conditional-writes/) (2024-08)
 - [S3 conditional writes, `If-Match`](https://aws.amazon.com/about-aws/whats-new/2024/11/amazon-s3-functionality-conditional-writes/) (2024-11)
+- [Announcing Amazon S3 Tables](https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-s3-tables-apache-iceberg-tables-analytics-workloads/) (2024-12)
 - [Amazon S3 Vectors GA](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-s3-vectors-generally-available/) (2025-12)
 - [Amazon S3 Files GA](https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-s3-files/) (2026-04)
 - [S3 Files synchronization](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files-synchronization.html)
