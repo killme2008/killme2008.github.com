@@ -1,5 +1,5 @@
 +++
-title = "The Three Pillars of Observability: A History No One Planned (Part 1 of 2)"
+title = "The Three Pillars of Observability: A History No One Planned"
 date = 2026-06-10
 description = "Today we treat metrics, logging, and tracing as the natural structure of observability. But it wasn't designed; it grew. Part 1, on how it split apart (2010–2017)."
 
@@ -97,6 +97,13 @@ That was 2018. At the time this line of reasoning was just a small section in a 
 The conditions for this idea to actually become real were nearly eight years away.
 
 In the next part, we'll pick up from this overlooked about-face: how, after 2018, seeds of unification began sprouting in several places at once, and why not one of those sprouts ever truly grew into a tree.
+
+## The series
+
+1. **A History No One Planned** (this post): how the three pillars split apart, 2010–2017.
+2. [The Unification That Never Quite Arrived](/observability-unification-history/): who tried to put them back together after 2018, and why none of it landed.
+3. [Why Now](/observability-unification-why-now/): the eight-year wait, and the three waves that ended it.
+4. [What Is Left for the Database](/what-is-left-for-the-database/): the answer at the database layer, and the two paths I ruled out first.
 
 ## References
 

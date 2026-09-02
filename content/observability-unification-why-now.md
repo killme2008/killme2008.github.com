@@ -99,6 +99,13 @@ This is the easiest place to get it wrong. Before I worked it out, I went down t
 
 The next piece, the last in the series, gets to GreptimeDB's own answer: faced with unification, what an observability database should do — and, more importantly, what it shouldn't.
 
+## The series
+
+1. [A History No One Planned](/observability-three-pillars-history/): how the three pillars split apart, 2010–2017.
+2. [The Unification That Never Quite Arrived](/observability-unification-history/): who tried to put them back together after 2018, and why none of it landed.
+3. **Why Now** (this post): the eight-year wait, and the three waves that ended it.
+4. [What Is Left for the Database](/what-is-left-for-the-database/): the answer at the database layer, and the two paths I ruled out first.
+
 ## References
 
 [^1]: [Datadog's $65M/year customer mystery solved](https://blog.pragmaticengineer.com/datadog-65m-year-customer-mystery/): Coinbase's 2021 Datadog bill was about $65M, derived by a JP Morgan analyst from Datadog's earnings report.

@@ -1,5 +1,5 @@
 +++
-title = "The Three Pillars of Observability: The Unification That Never Quite Arrived (Part 2 of 2)"
+title = "The Three Pillars of Observability: The Unification That Never Quite Arrived"
 date = 2026-06-16
 description = "Part 1 was about how the three pillars split apart. This part is about how many smart people, starting in 2018, tried to put them back together — what they actually built, and why none of it quite reached the finish line."
 
@@ -118,6 +118,13 @@ What, then, pushed this from "done, but a breath short" to "has to be redone"?
 My answer: not cloud-native, not cost. It's the arriving agent era. When the querying end switches from human to agent, the meaning of "unification" gets rewritten from the ground up, and that's exactly the question none of the past eight years' solutions had time to answer.
 
 Now that the history's told, the next piece takes it up: why now.
+
+## The series
+
+1. [A History No One Planned](/observability-three-pillars-history/): how the three pillars split apart, 2010–2017.
+2. **The Unification That Never Quite Arrived** (this post): who tried to put them back together after 2018, and why none of it landed.
+3. [Why Now](/observability-unification-why-now/): the eight-year wait, and the three waves that ended it.
+4. [What Is Left for the Database](/what-is-left-for-the-database/): the answer at the database layer, and the two paths I ruled out first.
 
 ## References
 

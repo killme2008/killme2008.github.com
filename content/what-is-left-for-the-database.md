@@ -156,6 +156,13 @@ Facing that problem, GreptimeDB's answer is deliberately small: a light semantic
 
 Because this time, the smartest part of the stack shouldn't be the database.
 
+## The series
+
+1. [A History No One Planned](/observability-three-pillars-history/): how the three pillars split apart, 2010–2017.
+2. [The Unification That Never Quite Arrived](/observability-unification-history/): who tried to put them back together after 2018, and why none of it landed.
+3. [Why Now](/observability-unification-why-now/): the eight-year wait, and the three waves that ended it.
+4. **What Is Left for the Database** (this post): the answer at the database layer, and the two paths I ruled out first.
+
 ## References
 
 [^1]: [Trace Data Modeling | GreptimeDB Documentation](https://docs.greptime.com/user-guide/traces/data-model/); for physical design and the 16-region partitioning detail, see [How GreptimeDB Handles Massive Trace Data at Low Cost](https://greptime.com/blogs/2025-06-06-greptimedb-massive-trace-data).
